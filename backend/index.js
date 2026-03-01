@@ -13,12 +13,9 @@ const PORT = process.env.PORT || 4001;
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
 app.get("/", (req, res) => {
-  res.send("Backend is running 🚀");
+    res.send("Backend is running 🚀");
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
-});
 // Helper function to fetch using GraphQL
 async function fetchGraphQL(query, variables, token) {
     if (!token) {

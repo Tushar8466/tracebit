@@ -49,7 +49,8 @@ export default function ContributorsPage() {
                 headers["Authorization"] = `Bearer ${session.accessToken}`;
             }
 
-            const res = await fetch(`http://localhost:4001/api/contributors?repo=${repoInput.trim()}`, {
+            const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4001";
+            const res = await fetch(`${backendUrl}/api/contributors?repo=${repoInput.trim()}`, {
                 headers
             });
             const data = await res.json();

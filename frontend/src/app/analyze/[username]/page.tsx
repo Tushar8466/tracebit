@@ -151,7 +151,8 @@ export default function AnalyzeResultPage({
                 setProfile(ghData);
 
                 // 2. Fetch TraceBit analysis from backend
-                const traceRes = await fetch("http://localhost:4000/", {
+                const backendUrl = process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:4001";
+                const traceRes = await fetch(`${backendUrl}/`, {
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({

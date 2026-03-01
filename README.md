@@ -203,3 +203,8 @@ privacy and organizational complia
 | *ML/AI*      | Python, FastAPI, PyTorch |
 | *Database*   | MongoDB (Mongoose ODM), MongoDB Atlas           |
 | *Deployment* | Vercel (Frontend), Render / Railway (ML API), GitHub Actions (CI/CD) |
+
+## 9. Links
+- Google Drive: https://drive.google.com/drive/folders/166F_ocIBV1FFcYvpqdzpZYmdH6Dq2j36?usp=sharing
+- Github: https://github.com/Tushar8466/tracebit
+- Demo Link: https://tracebit-jssg-frontend.vercel.app/

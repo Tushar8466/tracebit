@@ -1,7 +1,2 @@
-node_modules/
-.next/
-.env
-.env.local
-dist/
-build/
-.DS_Store   
+frontend/.next
+backend/.next

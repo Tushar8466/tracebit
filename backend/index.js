@@ -9,9 +9,16 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const PORT = 4001; // Using 4001 just in case 4000 is still bound by the previous server
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN; // Ensure .env has this token for the backend
+const PORT = process.env.PORT || 4001;
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
 
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+app.listen(PORT, () => {
+  console.log(`Server running on port ${PORT}`);
+});
 // Helper function to fetch using GraphQL
 async function fetchGraphQL(query, variables, token) {
     if (!token) {

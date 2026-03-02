@@ -4,6 +4,7 @@ import { BoxesCore } from "./ui/background-boxes";
 import { EvervaultCard } from "./ui/evervault-card";
 import { motion, AnimatePresence } from "motion/react";
 import { CanvasRevealEffect } from "./ui/canvas-reveal-effect";
+import { World } from "./ui/globe";
 import React from "react";
 
 import { Search, Brain, BarChart, User, Settings, Lock } from "lucide-react";
@@ -181,6 +182,61 @@ function HomePage() {
             />
           </Card>
         </div>
+      </div>
+
+      {/* ── Global Reach Section ── */}
+      <div className="relative z-20 w-full mx-auto px-4 py-24 sm:px-6 lg:px-8 border-t border-neutral-200 dark:border-neutral-800">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 dark:text-white sm:text-4xl">
+            Data From Worldwide
+          </h2>
+          <p className="mt-4 text-lg text-neutral-600 dark:text-neutral-400">
+            Connecting developers and teams across the globe.
+          </p>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto h-[500px]"
+        >
+          <World
+            globeConfig={{
+              pointSize: 4,
+              globeColor: "#062056",
+              showAtmosphere: true,
+              atmosphereColor: "#FFFFFF",
+              atmosphereAltitude: 0.1,
+              emissive: "#062056",
+              emissiveIntensity: 0.1,
+              shininess: 0.9,
+              polygonColor: "rgba(255,255,255,0.7)",
+              ambientLight: "#38bdf8",
+              directionalLeftLight: "#ffffff",
+              directionalTopLight: "#ffffff",
+              pointLight: "#ffffff",
+              arcTime: 1000,
+              arcLength: 0.9,
+              rings: 1,
+              maxRings: 3,
+              initialPosition: { lat: 22.3193, lng: 114.1694 },
+              autoRotate: true,
+              autoRotateSpeed: 0.5,
+            }}
+            data={[
+              { order: 1, startLat: 37.7749, startLng: -122.4194, endLat: 51.5074, endLng: -0.1278, arcAlt: 0.3, color: "#06b6d4" },
+              { order: 2, startLat: 51.5074, startLng: -0.1278, endLat: 35.6762, endLng: 139.6503, arcAlt: 0.4, color: "#6366f1" },
+              { order: 3, startLat: 37.7749, startLng: -122.4194, endLat: -33.8688, endLng: 151.2093, arcAlt: 0.5, color: "#10b981" },
+              { order: 4, startLat: 19.076, startLng: 72.8777, endLat: 51.5074, endLng: -0.1278, arcAlt: 0.35, color: "#f59e0b" },
+              { order: 5, startLat: 1.3521, startLng: 103.8198, endLat: 35.6762, endLng: 139.6503, arcAlt: 0.2, color: "#ec4899" },
+              { order: 6, startLat: -23.5505, startLng: -46.6333, endLat: 48.8566, endLng: 2.3522, arcAlt: 0.45, color: "#8b5cf6" },
+              { order: 7, startLat: 55.7558, startLng: 37.6173, endLat: 40.7128, endLng: -74.006, arcAlt: 0.4, color: "#06b6d4" },
+              { order: 8, startLat: 28.6139, startLng: 77.209, endLat: 1.3521, endLng: 103.8198, arcAlt: 0.25, color: "#10b981" },
+            ]}
+          />
+        </motion.div>
       </div>
     </div>
   );

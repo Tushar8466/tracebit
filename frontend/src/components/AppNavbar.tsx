@@ -12,6 +12,7 @@ import {
     IconUsers
 } from "@tabler/icons-react";
 import { useSession, signOut } from "next-auth/react";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 
 export function AppNavbar() {
     const { data: session } = useSession();
@@ -61,9 +62,9 @@ export function AppNavbar() {
                         className="object-cover"
                     />
                 </div>
-                <span className="font-bold text-xl tracking-tight text-slate-900 dark:text-white hidden sm:block">
-                    Tracebit
-                </span>
+                <div className="hidden sm:block font-bold text-xl tracking-tight text-slate-900 dark:text-white">
+                    <TextHoverEffect text="Tracebit" />
+                </div>
             </div>
 
             {/* Centered Dock */}

@@ -1,9 +1,8 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import { ThemeProvider } from "@/components/theme-provider";
-import { AppNavbar } from "@/components/AppNavbar";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { AuthProvider } from "@/components/AuthProvider";
+import { AppShell } from "@/components/AppShell";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -41,9 +40,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <AppNavbar />
-            <ThemeToggle />
-            {children}
+            <AppShell>{children}</AppShell>
           </ThemeProvider>
         </AuthProvider>
       </body>

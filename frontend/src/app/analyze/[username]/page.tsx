@@ -5,6 +5,7 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import Link from "next/link";
 import { GitHubCalendar } from "react-github-calendar";
+import { TextHoverEffect } from "@/components/ui/text-hover-effect";
 import {
     IconBrandGithub,
     IconExternalLink,
@@ -296,10 +297,15 @@ export default function AnalyzeResultPage({
                     New Scan
                 </Link>
                 <div className="flex items-center gap-2">
-                    <div className="w-6 h-6 rounded bg-gradient-to-br from-violet-500 to-indigo-600 flex items-center justify-center">
-                        <IconShield className="w-3 h-3 text-white" />
+                    <div className="relative w-7 h-7 rounded-full overflow-hidden border border-neutral-800">
+                        <Image
+                            src="/tracebit.jpeg"
+                            alt="Tracebit Logo"
+                            fill
+                            className="object-cover"
+                        />
                     </div>
-                    <span className="text-white font-bold text-sm">TraceBit</span>
+                    <span className="text-white font-bold text-sm">Tracebit</span>
                 </div>
                 <a
                     href={profile?.html_url ?? `https://github.com/${username}`}
@@ -445,7 +451,9 @@ export default function AnalyzeResultPage({
                         transition={{ duration: 0.5, delay: 0.6 }}
                         className="w-full bg-neutral-900/50 rounded-2xl border border-neutral-800 p-6 flex flex-col items-center"
                     >
-                        <h2 className="text-lg font-bold text-white mb-6">GitHub Contributions</h2>
+                        <h2 className="text-lg font-bold mb-6">
+                            <TextHoverEffect text="GitHub Contributions" />
+                        </h2>
                         <div className="w-full overflow-x-auto flex justify-center pb-2 [&_svg]:max-w-full!">
                             <GitHubCalendar
                                 username={username}

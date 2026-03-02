@@ -10,7 +10,7 @@ export const authOptions: NextAuthOptions = {
     ],
     pages: {
         signIn: "/signup",
-    },  
+    },
     callbacks: {
         async jwt({ token, account, profile }) {
             if (account) {
@@ -22,9 +22,7 @@ export const authOptions: NextAuthOptions = {
             return token;
         },
         async session({ session, token }) {
-            // @ts-ignore
             session.accessToken = token.accessToken;
-            // @ts-ignore
             session.username = token.username;
             return session;
         }
